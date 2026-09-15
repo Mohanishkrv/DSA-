@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 75e8b161-45a2-4a7a-bd60-71e59ce63f38
  * @name Array BinaryQueries
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

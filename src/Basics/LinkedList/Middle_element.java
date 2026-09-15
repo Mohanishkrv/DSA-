@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 22b30685-b8c6-4ad3-add7-a626035ef51b
  * @name Middle element
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package LinkedList;

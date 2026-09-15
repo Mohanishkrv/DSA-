@@ -4,6 +4,7 @@
  */
 
 /**
+ * @metadata-start
  * @id 49b276da-97be-4b97-924b-9deeb50a5bda
  * @name LinkedList Implementation
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Stack;

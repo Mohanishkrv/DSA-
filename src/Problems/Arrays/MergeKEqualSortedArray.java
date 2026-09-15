@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
+ * @metadata-start
  * @id beb85abd-f24a-4d97-80e0-08cb66f2dd13
  * @name MergeKEqualSortedArray
  * @description
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Array_Problems;

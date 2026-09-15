@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id e18c1995-c670-421b-9f06-e6af02f3626d
  * @name CountSort
  * @description
  *
- * @topic
+ * @topic Sorting
  * @type Normal
  * @difficulty
  * @pattern
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Sorting;

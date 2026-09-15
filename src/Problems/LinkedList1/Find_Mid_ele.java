@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 08b1eb52-8ea0-4ea2-ab8d-1854c89a57ed
  * @name Find Mid ele
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package LinkedList;

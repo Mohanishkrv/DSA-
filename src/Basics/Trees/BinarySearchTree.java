@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 2c69322f-9e84-475b-bc56-04e9ec347025
  * @name BinarySearchTree
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Tree;

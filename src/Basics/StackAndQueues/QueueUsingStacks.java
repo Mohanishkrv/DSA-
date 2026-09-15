@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
+ * @metadata-start
  * @id 156d03e0-7121-47e0-872b-1e592327b622
  * @name QueueUsingStacks
  * @description
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Stack_and_Queue;

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
+ * @metadata-start
  * @id e465d9d2-5e86-40c0-ad41-a4d45bd33a69
  * @name LongestConsecutiveSubsequence
  * @description
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Array_Problems;

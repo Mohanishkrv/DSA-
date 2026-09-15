@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 72cd5280-fbba-4e7c-adf7-9aea1567e17f
  * @name Rabin Karp Algo
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package String_Algorithm;

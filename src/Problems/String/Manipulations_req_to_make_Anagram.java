@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 19cd1683-3800-4dc5-a9b6-0a2d6b40d1c8
  * @name Manipulations req to make Anagram
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package String;

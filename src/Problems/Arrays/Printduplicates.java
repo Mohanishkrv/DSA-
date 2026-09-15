@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
+ * @metadata-start
  * @id b07ee82b-26b2-4778-b875-a124fc0949d5
  * @name Printduplicates
  * @description
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Array_Problems;

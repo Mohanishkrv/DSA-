@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 64977bfe-1807-4c41-bc9b-fadb977297f3
  * @name SieveOfErasthonese
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Standard_Problems;

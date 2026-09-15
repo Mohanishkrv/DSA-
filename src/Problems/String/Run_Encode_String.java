@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id a294bdd8-72a6-41fe-b05f-8703edcb3ede
  * @name Run Encode String
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package String;

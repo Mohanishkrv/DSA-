@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 41958045-226e-4725-95e4-e1e3ba75a6be
  * @name PostOrder from IN PRE
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Binary_Search_Tree;

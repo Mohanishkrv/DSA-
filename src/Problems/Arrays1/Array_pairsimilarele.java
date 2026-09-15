@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 9494ef95-038d-4ffa-9e4c-2b6310f8a4ed
  * @name Array pairsimilarele
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

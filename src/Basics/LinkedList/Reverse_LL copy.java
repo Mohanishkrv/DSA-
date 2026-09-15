@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 3642fc24-35b8-4184-9070-2f6c78d97c39
  * @name Reverse LL copy
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Singly_Linked_List;

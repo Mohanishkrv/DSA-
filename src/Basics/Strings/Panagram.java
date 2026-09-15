@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
+ * @metadata-start
  * @id 89a264ab-125e-4538-8b71-92b6c3bcdcb5
  * @name Panagram
  * @description
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package String_Problems;

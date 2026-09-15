@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 30bb6406-6b9b-4554-ae48-65a752cda9bd
  * @name Shift for Balnced Parantheses
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Standard_Problems;

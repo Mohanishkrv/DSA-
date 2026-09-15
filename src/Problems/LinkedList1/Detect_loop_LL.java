@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id ccb7b593-6a5a-4488-8a7e-0ec80d61696b
  * @name Detect loop LL
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package LinkedList;

@@ -1,6 +1,7 @@
 // Java program to print all subarrays
 // in the array which has sum 0
 /**
+ * @metadata-start
  * @id 5a74713e-30df-40c1-9a2e-cd6328ae13ac
  * @name AllSubarrayWithGivenSumPositive
  * @description
@@ -25,6 +26,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Array_Problems;

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 7217e6a6-0a9d-4746-83bd-179e49795ccb
  * @name TowerOfHanoi
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Standard_Problems;

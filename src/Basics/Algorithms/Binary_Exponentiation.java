@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 88d6b214-b85f-43b7-a39b-d9226b28af0f
  * @name Binary Exponentiation
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Basics.Algorithms;

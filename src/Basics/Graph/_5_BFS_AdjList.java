@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 4fbcccee-c298-40c9-b7eb-fb3f3215ef9b
  * @name 5 BFS AdjList
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Graph;

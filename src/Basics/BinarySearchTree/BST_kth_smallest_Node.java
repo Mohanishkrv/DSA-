@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 96d9fdf0-bfd2-4c1c-88d7-b3d75c699403
  * @name BST kth smallest Node
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Binary_Search_Tree;

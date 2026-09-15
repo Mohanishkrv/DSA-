@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 063d9622-59c9-43e2-b70e-d74ba2e15195
  * @name Factorial
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Recursion;

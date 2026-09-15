@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 761d50ed-160b-42c0-9704-bba948c29a29
  * @name NonZeroes
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

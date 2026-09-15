@@ -5,6 +5,7 @@
  */
 
 /**
+ * @metadata-start
  * @id e80b18d6-4881-4212-8d94-e0d1040da120
  * @name Array 3Rot
  * @description
@@ -29,6 +30,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

@@ -82,6 +82,14 @@
     <script>
         let allProblems = [];
 
+        const KNOWN_FIELDS = new Set([
+            "id", "name", "description", "topic", "type", "difficulty",
+            "pattern", "companies", "source", "url", "status", "approach",
+            "attempts", "confidence", "review", "time-complexity",
+            "space-complexity", "limitations", "edge-cases",
+            "file", "section", "category"
+        ]);
+
         async function loadProblems() {
             try {
                 const response = await fetch("/problems");
@@ -95,38 +103,36 @@
         }
 
         function updateStats(problems) {
-            const total = problems.length;
-            const solved = problems.filter(p => p.status === "Solved").length;
-            const unsolved = problems.filter(p => p.status === "Unsolved").length;
+            const total      = problems.length;
+            const solved     = problems.filter(p => p.status === "Solved").length;
+            const unsolved   = problems.filter(p => p.status === "Unsolved").length;
             const revisiting = problems.filter(p => p.status === "Revisiting").length;
 
-            document.getElementById("statTotal").textContent = `${total} total`;
-            document.getElementById("statSolved").textContent = `${solved} solved`;
-            document.getElementById("statUnsolved").textContent = `${unsolved} unsolved`;
+            document.getElementById("statTotal").textContent      = `${total} total`;
+            document.getElementById("statSolved").textContent     = `${solved} solved`;
+            document.getElementById("statUnsolved").textContent   = `${unsolved} unsolved`;
             document.getElementById("statRevisiting").textContent = `${revisiting} revisiting`;
         }
 
         function difficultyClass(difficulty) {
             if (!difficulty) return "badge-default";
-            return {
-                Easy: "badge-easy",
-                Medium: "badge-medium",
-                Hard: "badge-hard"
-            }[difficulty] || "badge-default";
+            return { Easy: "badge-easy", Medium: "badge-medium", Hard: "badge-hard" }[difficulty] || "badge-default";
         }
 
         function statusClass(status) {
-            return {
-                Solved: "status-solved",
-                Unsolved: "status-unsolved",
-                Revisiting: "status-revisiting"
-            }[status] || "status-default";
+            return { Solved: "status-solved", Unsolved: "status-unsolved", Revisiting: "status-revisiting" }[status] || "status-default";
+        }
+
+        function val(v) {
+            if (!v || (Array.isArray(v) && v.length === 0)) return "—";
+            if (Array.isArray(v)) return v.join(", ");
+            return v;
         }
 
         function displayProblems(problems) {
             const container = document.getElementById("problems");
-            const empty = document.getElementById("emptyState");
-            const count = document.getElementById("resultCount");
+            const empty     = document.getElementById("emptyState");
+            const count     = document.getElementById("resultCount");
 
             container.innerHTML = "";
 
@@ -143,21 +149,107 @@
                 const item = document.createElement("div");
                 item.className = "problem-card";
 
+                // Custom tags — any key not in KNOWN_FIELDS
+                const extraEntries = Object.entries(problem).filter(([k]) => !KNOWN_FIELDS.has(k));
+                const extraTagsHTML = extraEntries.length
+                    ? `<div class="detail-row">
+                           <span class="detail-label">Custom</span>
+                           <div class="extra-tags">
+                               ${extraEntries.map(([k, v]) => `<span class="meta-tag custom">@${k}: ${val(v)}</span>`).join("")}
+                           </div>
+                       </div>`
+                    : "";
+
+                const urlHTML = problem.url
+                    ? `<div class="detail-row">
+                           <span class="detail-label">URL</span>
+                           <a href="${problem.url}" target="_blank">${problem.url}</a>
+                       </div>`
+                    : "";
+
+                const companiesHTML = (problem.companies && problem.companies.length)
+                    ? `<div class="detail-row">
+                           <span class="detail-label">Companies</span>
+                           <span>${problem.companies.join(", ")}</span>
+                       </div>`
+                    : "";
+
                 item.innerHTML = `
                     <div class="card-header">
                         <h3 class="problem-name">${problem.name}</h3>
                         <span class="badge ${difficultyClass(problem.difficulty)}">${problem.difficulty || "—"}</span>
                     </div>
+
                     <div class="card-meta">
-                        <span class="meta-tag">${problem.topic || "No topic"}</span>
+                        <span class="meta-tag">${problem.topic   || "No topic"}</span>
                         <span class="meta-tag">${problem.pattern || "No pattern"}</span>
-                        <span class="meta-tag">${problem.type || "No type"}</span>
+                        <span class="meta-tag">${problem.type    || "No type"}</span>
                     </div>
+
                     <div class="card-footer">
                         <span class="status-chip ${statusClass(problem.status)}">${problem.status || "Not set"}</span>
-                        <span class="section-label">${problem.section || ""} ${problem.category ? "· " + problem.category : ""}</span>
+                        <span class="section-label">${problem.section || ""}${problem.category ? " · " + problem.category : ""}</span>
+                        <span class="expand-btn">▸ details</span>
+                    </div>
+
+                    <div class="card-detail hidden">
+                        <div class="detail-row">
+                            <span class="detail-label">Description</span>
+                            <span>${val(problem.description)}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Approach</span>
+                            <span>${val(problem.approach)}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Time</span>
+                            <span>${val(problem["time-complexity"])}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Space</span>
+                            <span>${val(problem["space-complexity"])}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Attempts</span>
+                            <span>${val(problem.attempts)}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Confidence</span>
+                            <span>${val(problem.confidence)}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Edge Cases</span>
+                            <span>${val(problem["edge-cases"])}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Limitations</span>
+                            <span>${val(problem.limitations)}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Review</span>
+                            <span>${val(problem.review)}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Source</span>
+                            <span>${val(problem.source)}</span>
+                        </div>
+                        ${companiesHTML}
+                        ${urlHTML}
+                        ${extraTagsHTML}
+                        <div class="detail-row detail-file">
+                            <span class="detail-label">File</span>
+                            <span>${val(problem.file)}</span>
+                        </div>
                     </div>
                 `;
+
+                item.querySelector(".expand-btn").addEventListener("click", () => {
+                    const detail = item.querySelector(".card-detail");
+                    const btn    = item.querySelector(".expand-btn");
+                    const isOpen = !detail.classList.contains("hidden");
+                    detail.classList.toggle("hidden");
+                    btn.textContent = isOpen ? "▸ details" : "▾ details";
+                });
 
                 container.appendChild(item);
             });
@@ -165,15 +257,15 @@
 
         function filterProblems() {
             const searchText = document.getElementById("search").value.toLowerCase();
-            const status = document.getElementById("statusFilter").value;
+            const status     = document.getElementById("statusFilter").value;
             const difficulty = document.getElementById("difficultyFilter").value;
-            const topic = document.getElementById("topicFilter").value;
+            const topic      = document.getElementById("topicFilter").value;
 
             const filtered = allProblems.filter(problem => {
-                const matchesSearch = problem.name.toLowerCase().includes(searchText);
-                const matchesStatus = status === "All" || problem.status === status;
+                const matchesSearch     = problem.name.toLowerCase().includes(searchText);
+                const matchesStatus     = status     === "All" || problem.status     === status;
                 const matchesDifficulty = difficulty === "All" || problem.difficulty === difficulty;
-                const matchesTopic = topic === "All" || problem.topic === topic;
+                const matchesTopic      = topic      === "All" || problem.topic      === topic;
                 return matchesSearch && matchesStatus && matchesDifficulty && matchesTopic;
             });
 
@@ -181,10 +273,10 @@
         }
 
         function resetFilters() {
-            document.getElementById("search").value = "";
-            document.getElementById("statusFilter").value = "All";
+            document.getElementById("search").value           = "";
+            document.getElementById("statusFilter").value     = "All";
             document.getElementById("difficultyFilter").value = "All";
-            document.getElementById("topicFilter").value = "All";
+            document.getElementById("topicFilter").value      = "All";
             displayProblems(allProblems);
         }
 

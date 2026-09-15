@@ -11,11 +11,12 @@ Recursive Approach : [S , T] = [O(log(N)) , O(log(N))]
  */
 
 /**
+ * @metadata-start
  * @id 5bfdfd3b-bd3d-4e4a-a153-7a4a5cbb6206
  * @name Binary Search
  * @description
  *
- * @topic
+ * @topic Searching
  * @type Normal
  * @difficulty
  * @pattern
@@ -35,6 +36,7 @@ Recursive Approach : [S , T] = [O(log(N)) , O(log(N))]
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Searching;

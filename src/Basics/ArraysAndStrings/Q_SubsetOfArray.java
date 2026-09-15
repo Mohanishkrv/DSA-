@@ -10,6 +10,7 @@
  */
 
 /**
+ * @metadata-start
  * @id 27824556-bfda-4bef-a0a4-7f5b522a7f28
  * @name Q SubsetOfArray
  * @description
@@ -34,6 +35,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 2f86c837-ea1d-4c35-b309-7cafcd189236
  * @name SumOfN
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Recursion;

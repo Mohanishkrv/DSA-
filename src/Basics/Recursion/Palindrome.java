@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 31772bb1-f853-4c41-b299-97c47d72417f
  * @name Palindrome
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Recursion;

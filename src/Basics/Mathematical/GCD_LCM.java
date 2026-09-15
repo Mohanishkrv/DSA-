@@ -15,6 +15,7 @@ LCM
 	*/
 
 /**
+ * @metadata-start
  * @id 6e1023c4-dcef-48b1-b6fb-a2f61df6ba9f
  * @name GCD LCM
  * @description
@@ -39,6 +40,7 @@ LCM
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Math;

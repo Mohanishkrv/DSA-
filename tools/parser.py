@@ -24,16 +24,12 @@ def find_java_files():
 def extract_metadata(file_path):
     content = file_path.read_text(encoding="utf-8")
 
-    match = re.search(r"/\*\*(.*?)\*/", content, re.DOTALL)
+    match = re.search(r"@metadata-start(.*?)@metadata-end", content, re.DOTALL)
 
     if not match:
         return None
 
     block = match.group(1)
-
-    # Only treat our JavaDoc blocks as DSA metadata
-    if "@id" not in block or "@name" not in block:
-        return None
 
     metadata = {}
 

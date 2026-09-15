@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 3dd80166-d4ef-468f-8a01-fb491d638710
  * @name Medals
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 

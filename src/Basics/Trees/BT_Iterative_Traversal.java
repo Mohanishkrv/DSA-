@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 9573eb4c-79e3-4db4-88d6-0ad3d7c4099f
  * @name BT Iterative Traversal
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Tree;

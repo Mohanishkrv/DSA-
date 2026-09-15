@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 949907f4-47e0-488e-988a-d6fc992f6c13
  * @name Cataln NO DP
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Dynaminc_Programming;

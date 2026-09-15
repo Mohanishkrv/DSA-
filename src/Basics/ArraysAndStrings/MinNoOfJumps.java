@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id bbeabb4e-66a4-4dd7-89a5-89e6c7f16456
  * @name MinNoOfJumps
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 /*M

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 93b53ff3-43d2-4c0c-8dcf-b738465aeefa
  * @name BST diameter Longest path
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Binary_Search_Tree;

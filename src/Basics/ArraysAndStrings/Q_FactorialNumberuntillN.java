@@ -10,6 +10,7 @@ https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than
 [T,S] = [O(K),O(1)] ;K = no of factorials
 */
 /**
+ * @metadata-start
  * @id 4f3ab6b0-8b1e-4e0b-a567-6b1fcb4c49f0
  * @name Q FactorialNumberuntillN
  * @description
@@ -34,6 +35,7 @@ https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

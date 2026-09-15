@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 1aa743b8-d7b5-491f-9f56-370cf4696f3b
- * @name Array 1
+ * @name Arrays 1
  * @description
  *
- * @topic
+ * @topic Arrays 
  * @type Normal
  * @difficulty
  * @pattern
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

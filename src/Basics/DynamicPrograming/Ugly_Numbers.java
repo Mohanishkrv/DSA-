@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 96b13ef1-36df-4868-be06-a3bf38f627dc
  * @name Ugly Numbers
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Dynaminc_Programming;

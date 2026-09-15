@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 550e8400-e29b-41d4-a716-446655440000
  * @name Knight Tour Problem
  * @description Find a path for a knight to visit every cell of the board.
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Standard_Problems;

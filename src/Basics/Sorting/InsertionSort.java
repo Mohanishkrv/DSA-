@@ -13,11 +13,12 @@ Total number of swaps (Worst case) = n(n-1)/2
 Best Case Analysis   : When array is sorted 	Ω(N)
 */
 /**
+ * @metadata-start
  * @id be0be3f0-8128-4b24-9b21-f92a5be1bc9b
  * @name InsertionSort
  * @description
  *
- * @topic
+ * @topic Sorting
  * @type Normal
  * @difficulty
  * @pattern
@@ -37,6 +38,7 @@ Best Case Analysis   : When array is sorted 	Ω(N)
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Sorting;

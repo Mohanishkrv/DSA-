@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id af04535f-1f12-4a59-abb5-96ae4303907b
  * @name Detect Duplicate
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Singly_Linked_List;

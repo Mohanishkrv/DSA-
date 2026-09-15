@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id ca3fdb20-c767-4d28-a1bc-42dbcbd9b844
  * @name BST Traversal
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Binary_Search_Tree;

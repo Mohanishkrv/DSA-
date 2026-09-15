@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 861f659a-3aec-4ce7-b44b-6015b0e5ecb9
  * @name Count Bits
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Bit_Manipulation;

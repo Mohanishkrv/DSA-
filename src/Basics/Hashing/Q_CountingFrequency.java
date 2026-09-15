@@ -3,6 +3,7 @@
  */
 
 /**
+ * @metadata-start
  * @id 6a545bcf-1f12-400c-84a1-69f7d607c907
  * @name Q CountingFrequency
  * @description
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Hashing;

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id ee8a6065-2fc1-4415-a660-486ec5ba103c
  * @name BST Common Ancestor
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Binary_Search_Tree;

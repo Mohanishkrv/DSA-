@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id c2a4d5c3-bb31-4fcc-887a-855bda5ce472
  * @name Rat in a Maze
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package BackTracking;

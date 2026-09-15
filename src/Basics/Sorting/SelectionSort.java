@@ -6,6 +6,7 @@ Time Complexity     : O(1)
 
 */
 /**
+ * @metadata-start
  * @id 14b9e534-dfc5-4099-bc02-d064863f5cff
  * @name SelectionSort
  * @description
@@ -30,6 +31,7 @@ Time Complexity     : O(1)
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Sorting;

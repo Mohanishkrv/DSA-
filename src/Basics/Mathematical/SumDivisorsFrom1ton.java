@@ -12,6 +12,7 @@ number i is occurring only in their multiples less than or equal to n. Thus, we 
 		[T,S] = [O(N),O(1)]
    */
 /**
+ * @metadata-start
  * @id cf69f62b-80c0-4508-8219-2559c7ac502d
  * @name SumDivisorsFrom1ton
  * @description
@@ -36,6 +37,7 @@ number i is occurring only in their multiples less than or equal to n. Thus, we 
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Math;

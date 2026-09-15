@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id c24b3f9c-e46f-42b3-ac97-5dcd14c5ad81
  * @name Longest Increasing Subsequence withInterruption
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 

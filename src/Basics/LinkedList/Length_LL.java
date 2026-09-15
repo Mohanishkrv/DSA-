@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id c68363cf-359e-4910-92e0-3b832dd23810
  * @name Length LL
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package	LinkedList;

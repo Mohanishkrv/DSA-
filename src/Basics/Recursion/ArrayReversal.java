@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 3f282fdd-e596-4f3d-8cbe-6ab5e9a12fa3
  * @name ArrayReversal
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Recursion;

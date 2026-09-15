@@ -9,6 +9,7 @@ Time Complexity     : O(1)
 */
 
 /**
+ * @metadata-start
  * @id 78170232-bbe1-4343-ac61-eb09e699f67d
  * @name Array Implementation
  * @description
@@ -33,6 +34,7 @@ Time Complexity     : O(1)
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Stack;

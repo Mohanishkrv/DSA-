@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id d6c64b39-7ad9-4a3d-b3e3-5dd11b58f592
  * @name SecondLargest
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

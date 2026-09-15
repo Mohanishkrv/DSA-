@@ -3,11 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
+ * @metadata-start
  * @id 5fe5833c-c1ef-45c0-904d-741691c886a2
  * @name InitialsOfName
  * @description
  *
- * @topic
+ * @topic Strings
  * @type Normal
  * @difficulty
  * @pattern
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package String_Problems;

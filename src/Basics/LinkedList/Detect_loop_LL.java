@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 22812009-56d3-4d16-bf9b-7eaa11f0d450
  * @name Detect loop LL
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Singly_Linked_List;

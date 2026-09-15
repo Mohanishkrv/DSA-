@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id ad55d8be-1e28-4fed-82dc-859138ab3c6f
  * @name Array Rotation
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

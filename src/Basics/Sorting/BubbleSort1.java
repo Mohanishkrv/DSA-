@@ -1,5 +1,6 @@
 
 /**
+ * @metadata-start
  * @id 0ad630c1-67d4-48b7-ac30-8fc76eae9fb6
  * @name BubbleSort1
  * @description
@@ -24,6 +25,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Sorting;

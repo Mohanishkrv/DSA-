@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id ca7c4f81-aaaa-4830-b4c6-9d99ceed1a41
  * @name Seggregate 0 and 1s
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Searching_Sorting;

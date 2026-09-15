@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 92397eb9-e554-42a4-9a31-7cd3deef0cb3
  * @name Q CheckSorting
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

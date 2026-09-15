@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 9ed7cf8d-49cb-4377-a303-77e6471a98db
  * @name Max Continuous SubArray
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Dynamic_Programming;

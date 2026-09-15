@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id b970f22e-c75f-4594-a7e3-2c70e7b73d2f
  * @name Stk using Arrays
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Stack_and_Queue;

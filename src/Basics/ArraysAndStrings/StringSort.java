@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 2613d805-0388-4f7e-afaf-b7c55759f635
  * @name StringSort
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 class StrigSort

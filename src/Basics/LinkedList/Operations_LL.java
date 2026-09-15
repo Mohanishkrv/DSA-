@@ -14,6 +14,7 @@
  */
 
 /**
+ * @metadata-start
  * @id 6b08b0c4-8d6b-4a97-888b-4f21e70ce4b6
  * @name Operations LL
  * @description
@@ -38,6 +39,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package LinkedList;

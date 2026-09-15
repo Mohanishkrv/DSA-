@@ -13,6 +13,7 @@
  Searching	: [S , T] = [O(1) , O(K)]
  */
 /**
+ * @metadata-start
  * @id 495fd2c0-e6fd-4876-a005-a053d4dc9573
  * @name AddOperations
  * @description
@@ -37,6 +38,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package LinkedList  ;

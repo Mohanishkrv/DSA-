@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 78efa06f-9d09-4553-bb6f-e956e0cfa937
  * @name 2 Adjacency Matrix Implemetation
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Graph;

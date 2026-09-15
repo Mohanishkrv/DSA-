@@ -3,6 +3,7 @@
  * https://leetcode.com/problems/reverse-integer/
  */
 /**
+ * @metadata-start
  * @id cc26fef1-4b43-41c4-8bb2-f3209bf7944e
  * @name Reversing
  * @description
@@ -27,6 +28,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Math;

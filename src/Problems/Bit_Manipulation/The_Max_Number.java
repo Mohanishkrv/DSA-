@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id ec4965cd-f4ad-4216-9d7a-fa9b85c52e22
  * @name The Max Number
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Bit_Manipulation;

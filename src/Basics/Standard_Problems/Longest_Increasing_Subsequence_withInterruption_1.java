@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id 78f2f8cc-0056-4b89-822b-1643cb55e2f0
  * @name Longest Increasing Subsequence withInterruption 1
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Standard_Problems;

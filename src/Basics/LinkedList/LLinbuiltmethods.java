@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id b3b5264d-4b17-4c7b-b1e4-dabe7ba68f38
  * @name LLinbuiltmethods
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Singly_Linked_List;

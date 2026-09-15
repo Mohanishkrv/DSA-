@@ -5,6 +5,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 45ff7fff-5679-4f0b-b823-13c461a8ef6f
  * @name Anagrams
  * @description
@@ -29,6 +30,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package String;

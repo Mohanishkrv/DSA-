@@ -6,6 +6,7 @@
  */
 
 /**
+ * @metadata-start
  * @id 295f6446-d15e-4a86-8d68-33588236d361
  * @name Peak Element
  * @description
@@ -30,6 +31,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

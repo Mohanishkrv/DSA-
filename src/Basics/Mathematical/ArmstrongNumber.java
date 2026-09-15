@@ -3,6 +3,7 @@
 NOTE: 371 is an Armstrong number since 33 + 73 + 13 = 371
  */
 /**
+ * @metadata-start
  * @id b2f30710-333c-42da-8f71-24b2a32b6d3d
  * @name ArmstrongNumber
  * @description
@@ -27,6 +28,7 @@ NOTE: 371 is an Armstrong number since 33 + 73 + 13 = 371
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Math;

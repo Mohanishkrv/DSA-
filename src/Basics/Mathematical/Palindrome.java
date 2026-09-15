@@ -9,6 +9,7 @@ https://leetcode.com/problems/palindrome-number/solutions/3232462/palindrome-of-
  */
 
 /**
+ * @metadata-start
  * @id 725efd77-cf52-44ec-b59f-091e47423379
  * @name Palindrome
  * @description
@@ -33,6 +34,7 @@ https://leetcode.com/problems/palindrome-number/solutions/3232462/palindrome-of-
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package	Math;

@@ -1,4 +1,5 @@
 /**
+ * @metadata-start
  * @id f28738c8-fd3b-44af-bbcb-c20fd5ddf9df
  * @name MinMax
  * @description
@@ -23,6 +24,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Arrays;

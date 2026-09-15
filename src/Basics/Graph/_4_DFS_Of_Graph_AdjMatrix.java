@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 89ca6e2f-a178-4069-92eb-3445e5c46ad9
  * @name 4 DFS Of Graph AdjMatrix
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Graph;

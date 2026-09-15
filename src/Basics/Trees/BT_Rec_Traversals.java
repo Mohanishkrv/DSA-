@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id f1c01dc3-76c5-42aa-9397-5684a2f3e0ed
  * @name BT Rec Traversals
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package BinaryTree;

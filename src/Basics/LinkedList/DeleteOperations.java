@@ -1,5 +1,6 @@
 
 /**
+ * @metadata-start
  * @id 195b249e-3cee-4625-8283-b7f2a1670420
  * @name DeleteOperations
  * @description
@@ -24,6 +25,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package LinkedList;

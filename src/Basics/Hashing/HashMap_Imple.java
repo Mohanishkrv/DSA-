@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 /**
+ * @metadata-start
  * @id 7e94cdd2-dfdf-4c4a-bae3-67b5b14b0d6c
  * @name HashMap Imple
  * @description
@@ -28,6 +29,7 @@
  *
  * @limitations
  * @edge-cases
+  * @metadata-end
  */
 
 package Hashing;
