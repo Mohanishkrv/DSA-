@@ -1,8 +1,4 @@
-        /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 /**
  * @id 0ad630c1-67d4-48b7-ac30-8fc76eae9fb6
  * @name BubbleSort1
@@ -35,10 +31,6 @@ package Sorting;
 import static java.lang.Thread.State.values;
 import java.util.Scanner;
 
-/**
- *
- * @author Mohanish
- */
 public class BubbleSort {
     void sort(int a[])
     {

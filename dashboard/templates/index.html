@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="header-title">
+                <span class="header-icon">⌥</span>
+                <h1>DSA Dashboard</h1>
+            </div>
+            <div class="stats-row">
+                <div class="stat-chip" id="statTotal">— total</div>
+                <div class="stat-chip solved" id="statSolved">— solved</div>
+                <div class="stat-chip unsolved" id="statUnsolved">— unsolved</div>
+                <div class="stat-chip revisiting" id="statRevisiting">— revisiting</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="filters-bar">
+        <div class="filters-inner">
+            <div class="search-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Search problems..." />
+            </div>
+
+            <select id="statusFilter">
+                <option value="All">All Status</option>
+                <option value="Unsolved">Unsolved</option>
+                <option value="Solved">Solved</option>
+                <option value="Revisiting">Revisiting</option>
+            </select>
+
+            <select id="difficultyFilter">
+                <option value="All">All Difficulty</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+
+            <select id="topicFilter">
+                <option value="All">All Topics</option>
+                <option value="Arrays">Arrays</option>
+                <option value="Strings">Strings</option>
+                <option value="Linked List">Linked List</option>
+                <option value="Stack">Stack</option>
+                <option value="Queue">Queue</option>
+                <option value="Trees">Trees</option>
+                <option value="Graphs">Graphs</option>
+                <option value="Recursion">Recursion</option>
+                <option value="Dynamic Programming">Dynamic Programming</option>
+                <option value="Backtracking">Backtracking</option>
+                <option value="Searching">Searching</option>
+                <option value="Sorting">Sorting</option>
+                <option value="Maths">Maths</option>
+                <option value="Bit Manipulation">Bit Manipulation</option>
+            </select>
+
+            <button id="resetBtn">Reset</button>
+        </div>
+    </div>
+
+    <main>
+        <p id="resultCount" class="result-count"></p>
+        <div id="problems"></div>
+        <div id="emptyState" class="empty-state hidden">
+            <p>No problems match your filters.</p>
+            <button onclick="resetFilters()">Clear filters</button>
+        </div>
+    </main>
+
+    <script>
+        let allProblems = [];
+
+        async function loadProblems() {
+            try {
+                const response = await fetch("/problems");
+                allProblems = await response.json();
+                updateStats(allProblems);
+                displayProblems(allProblems);
+            } catch (err) {
+                document.getElementById("problems").innerHTML =
+                    `<p class="error">Failed to load problems. Is the server running?</p>`;
+            }
+        }
+
+        function updateStats(problems) {
+            const total = problems.length;
+            const solved = problems.filter(p => p.status === "Solved").length;
+            const unsolved = problems.filter(p => p.status === "Unsolved").length;
+            const revisiting = problems.filter(p => p.status === "Revisiting").length;
+
+            document.getElementById("statTotal").textContent = `${total} total`;
+            document.getElementById("statSolved").textContent = `${solved} solved`;
+            document.getElementById("statUnsolved").textContent = `${unsolved} unsolved`;
+            document.getElementById("statRevisiting").textContent = `${revisiting} revisiting`;
+        }
+
+        function difficultyClass(difficulty) {
+            if (!difficulty) return "badge-default";
+            return {
+                Easy: "badge-easy",
+                Medium: "badge-medium",
+                Hard: "badge-hard"
+            }[difficulty] || "badge-default";
+        }
+
+        function statusClass(status) {
+            return {
+                Solved: "status-solved",
+                Unsolved: "status-unsolved",
+                Revisiting: "status-revisiting"
+            }[status] || "status-default";
+        }
+
+        function displayProblems(problems) {
+            const container = document.getElementById("problems");
+            const empty = document.getElementById("emptyState");
+            const count = document.getElementById("resultCount");
+
+            container.innerHTML = "";
+
+            if (problems.length === 0) {
+                empty.classList.remove("hidden");
+                count.textContent = "";
+                return;
+            }
+
+            empty.classList.add("hidden");
+            count.textContent = `Showing ${problems.length} problem${problems.length !== 1 ? "s" : ""}`;
+
+            problems.forEach(problem => {
+                const item = document.createElement("div");
+                item.className = "problem-card";
+
+                item.innerHTML = `
+                    <div class="card-header">
+                        <h3 class="problem-name">${problem.name}</h3>
+                        <span class="badge ${difficultyClass(problem.difficulty)}">${problem.difficulty || "—"}</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="meta-tag">${problem.topic || "No topic"}</span>
+                        <span class="meta-tag">${problem.pattern || "No pattern"}</span>
+                        <span class="meta-tag">${problem.type || "No type"}</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="status-chip ${statusClass(problem.status)}">${problem.status || "Not set"}</span>
+                        <span class="section-label">${problem.section || ""} ${problem.category ? "· " + problem.category : ""}</span>
+                    </div>
+                `;
+
+                container.appendChild(item);
+            });
+        }
+
+        function filterProblems() {
+            const searchText = document.getElementById("search").value.toLowerCase();
+            const status = document.getElementById("statusFilter").value;
+            const difficulty = document.getElementById("difficultyFilter").value;
+            const topic = document.getElementById("topicFilter").value;
+
+            const filtered = allProblems.filter(problem => {
+                const matchesSearch = problem.name.toLowerCase().includes(searchText);
+                const matchesStatus = status === "All" || problem.status === status;
+                const matchesDifficulty = difficulty === "All" || problem.difficulty === difficulty;
+                const matchesTopic = topic === "All" || problem.topic === topic;
+                return matchesSearch && matchesStatus && matchesDifficulty && matchesTopic;
+            });
+
+            displayProblems(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById("search").value = "";
+            document.getElementById("statusFilter").value = "All";
+            document.getElementById("difficultyFilter").value = "All";
+            document.getElementById("topicFilter").value = "All";
+            displayProblems(allProblems);
+        }
+
+        document.getElementById("search").addEventListener("input", filterProblems);
+        document.getElementById("statusFilter").addEventListener("change", filterProblems);
+        document.getElementById("difficultyFilter").addEventListener("change", filterProblems);
+        document.getElementById("topicFilter").addEventListener("change", filterProblems);
+        document.getElementById("resetBtn").addEventListener("click", resetFilters);
+
+        loadProblems();
+    </script>
+
+</body>
+</html>

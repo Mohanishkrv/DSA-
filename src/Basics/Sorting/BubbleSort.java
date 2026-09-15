@@ -13,12 +13,12 @@ Best Case Analysis   : When array is sorted 	Ω(N)
 /**
  * @id f05103ae-c399-4091-8f85-bc6e9e917e20
  * @name BubbleSort
- * @description
+ * @description Basic sorting algorithm which repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
  *
- * @topic
- * @type Normal
- * @difficulty
- * @pattern
+ * @topic Sorting
+ * @type Algorithm
+ * @difficulty Easy
+ * @pattern 
  *
  * @companies
  * @source
@@ -30,8 +30,8 @@ Best Case Analysis   : When array is sorted 	Ω(N)
  * @confidence Low
  * @review
  *
- * @time-complexity
- * @space-complexity
+ * @time-complexity O(1)
+ * @space-complexity O(N^2)
  *
  * @limitations
  * @edge-cases
