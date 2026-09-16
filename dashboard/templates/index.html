@@ -73,11 +73,25 @@
     <main>
         <p id="resultCount" class="result-count"></p>
         <div id="problems"></div>
-        <div id="emptyState" class="empty-state hidden">
+        <div id="emptyState" class="empty-state" style="display:none;">
             <p>No problems match your filters.</p>
             <button onclick="resetFilters()">Clear filters</button>
         </div>
     </main>
+
+    <!-- Modal -->
+    <div id="modal-overlay">
+        <div id="modal">
+            <div id="modal-header">
+                <div id="modal-title-group">
+                    <h2 id="modal-name"></h2>
+                    <span id="modal-badge"></span>
+                </div>
+                <button id="modal-close">✕</button>
+            </div>
+            <div id="modal-body"></div>
+        </div>
+    </div>
 
     <script>
         let allProblems = [];
@@ -129,6 +143,82 @@
             return v;
         }
 
+        function openModal(problem) {
+            document.getElementById("modal-name").textContent = problem.name;
+
+            const badge = document.getElementById("modal-badge");
+            badge.textContent = problem.difficulty || "—";
+            badge.className = `badge ${difficultyClass(problem.difficulty)}`;
+
+            const extraEntries = Object.entries(problem).filter(([k]) => !KNOWN_FIELDS.has(k));
+            const extraHTML = extraEntries.length
+                ? `<div class="modal-section">
+                       <div class="modal-section-title">Custom Tags</div>
+                       <div class="extra-tags">
+                           ${extraEntries.map(([k, v]) => `<span class="meta-tag custom">@${k}: ${val(v)}</span>`).join("")}
+                       </div>
+                   </div>`
+                : "";
+
+            document.getElementById("modal-body").innerHTML = `
+
+                <div class="modal-chips">
+                    <span class="status-chip ${statusClass(problem.status)}">${problem.status || "Not set"}</span>
+                    <span class="meta-tag">${problem.topic || "No topic"}</span>
+                    <span class="meta-tag">${problem.pattern || "No pattern"}</span>
+                    <span class="meta-tag">${problem.type || "No type"}</span>
+                    <span class="meta-tag">${problem.section || ""}${problem.category ? " · " + problem.category : ""}</span>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-title">Overview</div>
+                    <div class="detail-row"><span class="detail-label">Description</span><span>${val(problem.description)}</span></div>
+                    <div class="detail-row"><span class="detail-label">Approach</span><span>${val(problem.approach)}</span></div>
+                    <div class="detail-row"><span class="detail-label">Confidence</span><span>${val(problem.confidence)}</span></div>
+                    <div class="detail-row"><span class="detail-label">Attempts</span><span>${val(problem.attempts)}</span></div>
+                    <div class="detail-row"><span class="detail-label">Review</span><span>${val(problem.review)}</span></div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-title">Complexity</div>
+                    <div class="detail-row"><span class="detail-label">Time</span><span>${val(problem["time-complexity"])}</span></div>
+                    <div class="detail-row"><span class="detail-label">Space</span><span>${val(problem["space-complexity"])}</span></div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-title">Notes</div>
+                    <div class="detail-row"><span class="detail-label">Edge Cases</span><span>${val(problem["edge-cases"])}</span></div>
+                    <div class="detail-row"><span class="detail-label">Limitations</span><span>${val(problem.limitations)}</span></div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-title">References</div>
+                    <div class="detail-row"><span class="detail-label">Source</span><span>${val(problem.source)}</span></div>
+                    <div class="detail-row"><span class="detail-label">Companies</span><span>${val(problem.companies)}</span></div>
+                    ${problem.url ? `<div class="detail-row"><span class="detail-label">URL</span><a href="${problem.url}" target="_blank">${problem.url}</a></div>` : ""}
+                    <div class="detail-row"><span class="detail-label">File</span><span class="file-path">${val(problem.file)}</span></div>
+                </div>
+
+                ${extraHTML}
+            `;
+
+            document.getElementById("modal-overlay").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            document.getElementById("modal-overlay").style.display = "none";
+            document.body.style.overflow = "";
+        }
+
+        document.getElementById("modal-close").addEventListener("click", closeModal);
+        document.getElementById("modal-overlay").addEventListener("click", (e) => {
+            if (e.target === document.getElementById("modal-overlay")) closeModal();
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+
         function displayProblems(problems) {
             const container = document.getElementById("problems");
             const empty     = document.getElementById("emptyState");
@@ -137,118 +227,38 @@
             container.innerHTML = "";
 
             if (problems.length === 0) {
-                empty.classList.remove("hidden");
+                empty.style.display = "block";
                 count.textContent = "";
                 return;
             }
 
-            empty.classList.add("hidden");
+            empty.style.display = "none";
             count.textContent = `Showing ${problems.length} problem${problems.length !== 1 ? "s" : ""}`;
 
             problems.forEach(problem => {
                 const item = document.createElement("div");
                 item.className = "problem-card";
 
-                // Custom tags — any key not in KNOWN_FIELDS
-                const extraEntries = Object.entries(problem).filter(([k]) => !KNOWN_FIELDS.has(k));
-                const extraTagsHTML = extraEntries.length
-                    ? `<div class="detail-row">
-                           <span class="detail-label">Custom</span>
-                           <div class="extra-tags">
-                               ${extraEntries.map(([k, v]) => `<span class="meta-tag custom">@${k}: ${val(v)}</span>`).join("")}
-                           </div>
-                       </div>`
-                    : "";
-
-                const urlHTML = problem.url
-                    ? `<div class="detail-row">
-                           <span class="detail-label">URL</span>
-                           <a href="${problem.url}" target="_blank">${problem.url}</a>
-                       </div>`
-                    : "";
-
-                const companiesHTML = (problem.companies && problem.companies.length)
-                    ? `<div class="detail-row">
-                           <span class="detail-label">Companies</span>
-                           <span>${problem.companies.join(", ")}</span>
-                       </div>`
-                    : "";
-
                 item.innerHTML = `
                     <div class="card-header">
                         <h3 class="problem-name">${problem.name}</h3>
                         <span class="badge ${difficultyClass(problem.difficulty)}">${problem.difficulty || "—"}</span>
                     </div>
-
                     <div class="card-meta">
                         <span class="meta-tag">${problem.topic   || "No topic"}</span>
                         <span class="meta-tag">${problem.pattern || "No pattern"}</span>
                         <span class="meta-tag">${problem.type    || "No type"}</span>
                     </div>
-
                     <div class="card-footer">
                         <span class="status-chip ${statusClass(problem.status)}">${problem.status || "Not set"}</span>
                         <span class="section-label">${problem.section || ""}${problem.category ? " · " + problem.category : ""}</span>
-                        <span class="expand-btn">▸ details</span>
-                    </div>
-
-                    <div class="card-detail hidden">
-                        <div class="detail-row">
-                            <span class="detail-label">Description</span>
-                            <span>${val(problem.description)}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Approach</span>
-                            <span>${val(problem.approach)}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Time</span>
-                            <span>${val(problem["time-complexity"])}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Space</span>
-                            <span>${val(problem["space-complexity"])}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Attempts</span>
-                            <span>${val(problem.attempts)}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Confidence</span>
-                            <span>${val(problem.confidence)}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Edge Cases</span>
-                            <span>${val(problem["edge-cases"])}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Limitations</span>
-                            <span>${val(problem.limitations)}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Review</span>
-                            <span>${val(problem.review)}</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Source</span>
-                            <span>${val(problem.source)}</span>
-                        </div>
-                        ${companiesHTML}
-                        ${urlHTML}
-                        ${extraTagsHTML}
-                        <div class="detail-row detail-file">
-                            <span class="detail-label">File</span>
-                            <span>${val(problem.file)}</span>
-                        </div>
+                        <span class="expand-btn">details ▸</span>
                     </div>
                 `;
 
-                item.querySelector(".expand-btn").addEventListener("click", () => {
-                    const detail = item.querySelector(".card-detail");
-                    const btn    = item.querySelector(".expand-btn");
-                    const isOpen = !detail.classList.contains("hidden");
-                    detail.classList.toggle("hidden");
-                    btn.textContent = isOpen ? "▸ details" : "▾ details";
+                item.querySelector(".expand-btn").addEventListener("click", () => openModal(problem));
+                item.addEventListener("click", (e) => {
+                    if (!e.target.classList.contains("expand-btn")) openModal(problem);
                 });
 
                 container.appendChild(item);
